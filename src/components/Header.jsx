@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X } from 'lucide-react';
-import { ButterflyLogoIcon } from './ButterflyIcon';
+import logoClean from '../assets/dua_logo_clean.png';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,11 +15,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-[#FFFDFB]/92 backdrop-blur-md border-b border-[#F2ECE6] transition-all duration-300">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-22 flex items-center justify-between">
+      <header className="sticky top-0 z-50 w-full bg-[#FFFDFB]/95 backdrop-blur-md border-b border-[#ECE3DB] transition-all duration-300 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 h-[72px] sm:h-[80px] flex items-center justify-between relative">
           
           {/* Left: Hamburger & Navigation Links */}
-          <div className="flex items-center gap-6 lg:gap-8 flex-1">
+          <div className="flex items-center gap-5 sm:gap-6 lg:gap-7 z-10">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-1.5 -ml-1 text-[#423835] hover:text-brand-rose transition-colors duration-200 focus:outline-none"
@@ -29,7 +29,7 @@ export default function Header() {
             </button>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-7">
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -42,21 +42,26 @@ export default function Header() {
             </nav>
           </div>
 
-          {/* Center: Brand Logo */}
-          <div className="flex-shrink-0 flex flex-col items-center justify-center text-center select-none py-1 group cursor-pointer">
-            <div className="transition-transform duration-300 group-hover:scale-105">
-              <ButterflyLogoIcon className="w-7 h-7 sm:w-8 sm:h-8 text-brand-gold animate-glow" />
-            </div>
-            <h1 className="font-serif tracking-[0.32em] text-xl sm:text-2xl font-normal text-[#2E2421] -mr-[0.32em] mt-0.5 leading-none">
-              DUA
-            </h1>
-            <span className="font-serif italic text-[11px] sm:text-xs text-[#7B6A64] tracking-[0.18em] mt-0.5">
-              by Vidhi
-            </span>
+          {/* 
+            Center: The Signature "DUA by Vidhi" Tag
+            Positioned with absolute left-1/2 -translate-x-1/2 to guarantee true mathematical centering.
+            Hangs down gracefully past the header's bottom border as an authentic couture label plaque.
+          */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 z-30">
+            <a
+              href="#"
+              className="group block bg-[#FFFDF9] border-x border-b border-[#E5DDD5] rounded-b-md shadow-[0_4px_14px_rgba(60,45,35,0.07)] px-2.5 sm:px-3.5 pt-1.5 sm:pt-2 pb-2.5 sm:pb-3 w-[114px] sm:w-[134px] md:w-[146px] transition-all duration-300 hover:shadow-[0_6px_20px_rgba(60,45,35,0.11)] hover:border-[#DACFC5]"
+            >
+              <img
+                src={logoClean}
+                alt="DUA by Vidhi"
+                className="w-full h-auto object-contain max-h-[76px] sm:max-h-[86px] mx-auto transition-transform duration-300 group-hover:scale-[1.03]"
+              />
+            </a>
           </div>
 
           {/* Right: Action Icons */}
-          <div className="flex items-center justify-end gap-5 sm:gap-6 flex-1 text-[#423835]">
+          <div className="flex items-center justify-end gap-4 sm:gap-6 text-[#423835] z-10">
             <button
               className="p-1.5 hover:text-brand-rose transition-colors duration-200 focus:outline-none"
               aria-label="Search"
@@ -78,6 +83,7 @@ export default function Header() {
               <ShoppingBag className="w-[18px] h-[18px] sm:w-5 sm:h-5 stroke-[1.3]" />
             </button>
           </div>
+
         </div>
       </header>
 
@@ -93,11 +99,8 @@ export default function Header() {
           <div className="fixed inset-y-0 left-0 max-w-xs w-full bg-[#FFFDF9] shadow-2xl p-6 flex flex-col justify-between z-50 border-r border-[#F0E6DE]">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-[#F0E6DE]">
-                <div className="flex items-center gap-2">
-                  <ButterflyLogoIcon className="w-6 h-6 text-brand-gold" />
-                  <span className="font-serif tracking-[0.25em] text-lg font-medium text-[#2E2421]">
-                    DUA
-                  </span>
+                <div className="w-24">
+                  <img src={logoClean} alt="DUA by Vidhi" className="w-full h-auto" />
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
