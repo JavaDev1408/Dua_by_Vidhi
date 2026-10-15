@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X } from 'lucide-react';
-import logoClean from '../assets/dua_logo_clean.png';
+import { ButterflyLogoIcon } from './ButterflyIcon';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,11 +15,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-[#FFFDFB]/95 backdrop-blur-md border-b border-[#ECE3DB] transition-all duration-300 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 h-[72px] sm:h-[80px] flex items-center justify-between relative">
+      <header className="sticky top-0 z-50 w-full bg-[#FFFDFB]/92 backdrop-blur-md border-b border-[#F2ECE6] transition-all duration-300">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 h-20 sm:h-22 flex items-center justify-between relative">
           
           {/* Left: Hamburger & Navigation Links */}
-          <div className="flex items-center gap-5 sm:gap-6 lg:gap-7 z-10">
+          <div className="flex items-center gap-6 lg:gap-8 z-10">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-1.5 -ml-1 text-[#423835] hover:text-brand-rose transition-colors duration-200 focus:outline-none"
@@ -28,8 +28,8 @@ export default function Header() {
               <Menu className="w-5 h-5 stroke-[1.4]" />
             </button>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+            {/* Desktop Navigation Links */}
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -43,25 +43,36 @@ export default function Header() {
           </div>
 
           {/* 
-            Center: The Signature "DUA by Vidhi" Tag
-            Positioned with absolute left-1/2 -translate-x-1/2 to guarantee true mathematical centering.
-            Hangs down gracefully past the header's bottom border as an authentic couture label plaque.
+            Center: DUA by Vidhi Logo
+            Precisely centered horizontally and vertically using absolute positioning
+            (left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2) so that differing widths
+            of left navigation links and right action icons never displace the logo.
+            Uses pure HTML typography (Cinzel & Alex Brush) and custom refined SVG butterfly.
           */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 z-30">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-auto">
             <a
               href="#"
-              className="group block bg-[#FFFDF9] border-x border-b border-[#E5DDD5] rounded-b-md shadow-[0_4px_14px_rgba(60,45,35,0.07)] px-2.5 sm:px-3.5 pt-1.5 sm:pt-2 pb-2.5 sm:pb-3 w-[114px] sm:w-[134px] md:w-[146px] transition-all duration-300 hover:shadow-[0_6px_20px_rgba(60,45,35,0.11)] hover:border-[#DACFC5]"
+              className="flex flex-col items-center justify-center text-center select-none group cursor-pointer py-1"
             >
-              <img
-                src={logoClean}
-                alt="DUA by Vidhi"
-                className="w-full h-auto object-contain max-h-[76px] sm:max-h-[86px] mx-auto transition-transform duration-300 group-hover:scale-[1.03]"
-              />
+              {/* Delicate Golden Butterfly Icon */}
+              <div className="transition-transform duration-300 group-hover:scale-105">
+                <ButterflyLogoIcon className="w-8 h-6 sm:w-9 sm:h-7 text-[#9C7847]" />
+              </div>
+
+              {/* DUA - Roman Luxury Serif with Proportional Elegant Kerning */}
+              <span className="font-cinzel text-xl sm:text-2xl font-medium tracking-[0.06em] text-[#947245] leading-none mt-1">
+                DUA
+              </span>
+
+              {/* by Vidhi - Flowing Signature Calligraphy Script */}
+              <span className="font-signature text-base sm:text-[18px] text-[#947245] leading-none mt-0.5 tracking-wide">
+                by Vidhi
+              </span>
             </a>
           </div>
 
           {/* Right: Action Icons */}
-          <div className="flex items-center justify-end gap-4 sm:gap-6 text-[#423835] z-10">
+          <div className="flex items-center justify-end gap-5 sm:gap-6 text-[#423835] z-10">
             <button
               className="p-1.5 hover:text-brand-rose transition-colors duration-200 focus:outline-none"
               aria-label="Search"
@@ -99,8 +110,16 @@ export default function Header() {
           <div className="fixed inset-y-0 left-0 max-w-xs w-full bg-[#FFFDF9] shadow-2xl p-6 flex flex-col justify-between z-50 border-r border-[#F0E6DE]">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-[#F0E6DE]">
-                <div className="w-24">
-                  <img src={logoClean} alt="DUA by Vidhi" className="w-full h-auto" />
+                <div className="flex flex-col items-start">
+                  <div className="flex items-center gap-2">
+                    <ButterflyLogoIcon className="w-6 h-5 text-[#9C7847]" />
+                    <span className="font-cinzel text-lg font-medium tracking-[0.06em] text-[#947245] leading-none">
+                      DUA
+                    </span>
+                  </div>
+                  <span className="font-signature text-sm text-[#947245] ml-8 leading-none mt-0.5">
+                    by Vidhi
+                  </span>
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}

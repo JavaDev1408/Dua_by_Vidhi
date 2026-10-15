@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+        cinzel: ['"Cinzel"', '"Cormorant Garamond"', 'serif'],
+        signature: ['"Alex Brush"', '"Pinyon Script"', 'cursive'],
         script: ['"Pinyon Script"', 'cursive'],
         sans: ['Montserrat', 'sans-serif'],
       },
@@ -19,7 +21,8 @@ export default {
           blush: '#FBECE8',
           blushDark: '#ECC8BE',
           gold: '#C5A880',
-          goldDark: '#A8895C',
+          goldLogo: '#9C7847',
+          goldDark: '#8F6C3D',
           rose: '#7C3B49',
           roseDark: '#5E2B36',
           plum: '#652B39',
