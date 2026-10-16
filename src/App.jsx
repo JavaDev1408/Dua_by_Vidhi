@@ -4,11 +4,11 @@ import HeroSection from './components/HeroSection';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#FAF7F2] flex flex-col font-sans">
-      {/* 1. Slim, elegant ivory/blush luxury couture header */}
+    <div className="min-h-screen bg-[#FAF5EF] flex flex-col font-sans">
+      {/* 1. Header with centered DUA by Vidhi plaque tab */}
       <Header />
 
-      {/* 2. Hero Section: Palace balcony with Indian bride in pink lehenga */}
+      {/* 2. Hero Section: Seated bride in embellished lehenga in palace courtyard */}
       <main className="flex-1">
         <HeroSection />
 
@@ -17,7 +17,7 @@ export default function App() {
           Below the hero section, the rest of the page is kept completely empty 
           with a plain ivory background as specified.
         */}
-        <div className="w-full h-48 sm:h-64 bg-[#FAF7F2]" />
+        <div className="w-full h-48 sm:h-64 bg-[#FAF5EF]" />
       </main>
     </div>
   );

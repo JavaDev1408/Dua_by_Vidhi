@@ -1,92 +1,95 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { ButterflyHeroFloat, ButterflySmallQuote } from './ButterflyIcon';
-import heroBg from '../assets/hero-bride.jpg';
+import { ButterflySmallQuote } from './ButterflyIcon';
+import heroSeated from '../assets/hero-seated-bride.jpg';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[580px] sm:min-h-[680px] lg:min-h-[820px] flex items-center overflow-hidden">
-      {/* Hero Background Image */}
+    <section className="relative w-full min-h-[580px] sm:min-h-[660px] lg:min-h-[760px] flex items-center overflow-hidden bg-[#FAF5EF]">
+      {/* Hero Background Image (Seated Bride in Dusty-Rose Lehenga in Palace Courtyard) */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroBg}
-          alt="Indian bride in pink lehenga overlooking palace"
-          className="w-full h-full object-cover object-[65%_center] sm:object-[60%_center] lg:object-center select-none"
+          src={heroSeated}
+          alt="Indian bride seated in embellished pink lehenga in palace courtyard"
+          className="w-full h-full object-cover object-[70%_center] sm:object-[65%_center] lg:object-center select-none"
         />
-        {/* Soft Luxury Gradients for Text Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFFDF9]/90 via-[#FFFDF9]/50 to-transparent sm:via-[#FFFDF9]/40 sm:to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FFFDF9]/40 via-transparent to-[#FFFDF9]/30 pointer-events-none" />
+        {/* Soft Contrast Gradient on Left for Editorial Text Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF5EF]/95 via-[#FAF5EF]/60 to-transparent sm:via-[#FAF5EF]/45 sm:to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF5EF]/30 via-transparent to-transparent pointer-events-none" />
       </div>
 
-      {/* Main Content Container */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-16 sm:py-20 lg:py-28 flex flex-col justify-between min-h-[580px] sm:min-h-[680px] lg:min-h-[820px]">
+      {/* Main Content Container matching the desktop reference grid */}
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-14 sm:py-18 lg:py-24 flex flex-col justify-between min-h-[580px] sm:min-h-[660px] lg:min-h-[760px]">
         
-        {/* Top spacer or subtle floaters */}
-        <div className="hidden lg:block h-6" />
+        {/* Top spacing */}
+        <div className="hidden lg:block h-2" />
 
-        {/* Content Row: Left Hero Copy & Right Poetic Quote */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10 my-auto">
+        {/* Content Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 my-auto">
           
-          {/* Left Hero Content */}
+          {/* Left Column: Eyebrow, Headline, Description, and CTA Button */}
           <div className="lg:col-span-7 xl:col-span-6 relative">
             
-            {/* Delicate Floating Butterfly above headline */}
-            <div className="absolute -top-14 left-1 sm:-top-16 sm:left-4 z-20 pointer-events-none">
-              <ButterflyHeroFloat className="w-12 h-12 sm:w-16 sm:h-16 text-[#C2A379] animate-float-slow drop-shadow-sm opacity-90" />
+            {/* Category Eyebrow */}
+            <div className="flex items-center gap-2 mb-3 sm:mb-4">
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-sans font-medium text-[#9E8B80]">
+                BRIDAL & OCCASION WEAR
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A880]/70 inline-block" />
             </div>
 
-            {/* Headline */}
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[68px] xl:text-[76px] font-normal leading-[1.08] text-brand-rose tracking-[-0.01em] select-none">
+            {/* Headline with period matching reference */}
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[62px] xl:text-[68px] font-normal leading-[1.08] text-[#332A26] tracking-[-0.01em] select-none">
               A fairytale <br />
               looks better <br />
-              on you
-            </h2>
+              on you.
+            </h1>
 
             {/* Subtitle / Description */}
-            <p className="mt-5 sm:mt-6 text-sm sm:text-[15px] font-sans font-light text-[#594B46] max-w-sm sm:max-w-md leading-relaxed tracking-wide">
-              Discover the outfits, boutiques and experiences for your most beautiful chapter.
+            <p className="mt-4 sm:mt-5 text-xs sm:text-[14px] font-sans font-light text-[#5E534D] max-w-sm sm:max-w-md leading-relaxed tracking-wide">
+              Discover exquisite bridal and occasion wear, curated for every chapter of your journey.
             </p>
 
-            {/* CTA Button */}
-            <div className="mt-8 sm:mt-10">
+            {/* CTA Button: Solid Dusty Rose / Mauve Button */}
+            <div className="mt-7 sm:mt-9">
               <a
                 href="#collections"
-                className="group inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#FFFDF9]/85 hover:bg-[#FFFDF9] backdrop-blur-md border border-[#CBB3A8] text-[#3D2E29] hover:text-brand-rose shadow-sm hover:shadow-md transition-all duration-300 text-[11px] sm:text-[12px] font-sans font-medium tracking-[0.24em] uppercase"
+                className="group inline-flex items-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-[3px] bg-[#9C646E] hover:bg-[#8A535D] text-[#FFFDF9] shadow-sm hover:shadow-md transition-all duration-300 text-[10.5px] sm:text-[11px] font-sans font-medium tracking-[0.2em] uppercase"
               >
                 <span>EXPLORE COLLECTIONS</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1 stroke-[1.8] text-brand-rose" />
+                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1 stroke-[2]" />
               </a>
             </div>
           </div>
 
-          {/* Right Poetic Quote (matching screenshot placement and typography) */}
+          {/* Right Column: Poetic Quote & Vertical Line Anchor */}
           <div className="lg:col-span-5 xl:col-span-6 flex justify-start lg:justify-end">
-            <div className="relative text-left lg:text-right select-none max-w-xs lg:mr-4 xl:mr-10 py-4">
+            <div className="relative text-left lg:text-center select-none max-w-xs lg:mr-6 xl:mr-12 py-4 flex flex-col items-start lg:items-center">
               
-              <p className="font-script text-3xl sm:text-4xl lg:text-[40px] text-[#7F4E5B] leading-[1.28] tracking-normal drop-shadow-sm">
-                Every girl <br />
-                has wings. <br />
-                Every bride <br />
-                has a story.
+              {/* Uppercase Quote */}
+              <p className="font-serif text-[11px] sm:text-[12px] tracking-[0.24em] text-[#695E57] leading-[1.85] uppercase font-medium">
+                EVERY GIRL <br />
+                HAS WINGS. <br />
+                EVERY BRIDE <br />
+                HAS A STORY.
               </p>
 
-              {/* Decorative flourish and tiny butterfly */}
-              <div className="mt-4 flex items-center justify-start lg:justify-end gap-3 text-[#B08A93]">
-                <span className="w-10 sm:w-14 h-[1px] bg-gradient-to-r from-transparent to-[#B08A93]/60 hidden lg:inline-block" />
-                <ButterflySmallQuote className="w-5 h-5 text-[#9A6A76] animate-float-gentle inline-block" />
-                <span className="w-12 sm:w-16 h-[1px] bg-gradient-to-r from-[#B08A93]/60 to-transparent" />
-              </div>
+              {/* Vertical Elegant Dropline */}
+              <div className="w-[1px] h-12 sm:h-16 bg-[#B5A398]/60 my-3" />
+
+              {/* Small Anchor Butterfly */}
+              <ButterflySmallQuote className="w-4 h-4 sm:w-5 sm:h-5 text-[#8F7C73]" />
             </div>
           </div>
 
         </div>
 
-        {/* Bottom subtle space */}
-        <div className="h-4" />
+        {/* Bottom space */}
+        <div className="h-2" />
       </div>
 
-      {/* Very soft bottom blend to transition smoothly to plain ivory canvas */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#FAF7F2] to-transparent pointer-events-none" />
+      {/* Gentle bottom boundary transition to plain canvas */}
+      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#FAF5EF] to-transparent pointer-events-none" />
     </section>
   );
 }
