@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import OccasionsSection from './components/OccasionsSection';
+import DuaStoryBanner from './components/DuaStoryBanner';
 
 export default function App() {
   return (
@@ -16,8 +17,8 @@ export default function App() {
         {/* 3. Shop by Occasion: Six Moments, Endless Magic */}
         <OccasionsSection />
 
-        {/* Bottom clean ivory canvas */}
-        <div className="w-full h-24 bg-[#FAF5EF]" />
+        {/* 4. The Dua Story: Editorial Banner */}
+        <DuaStoryBanner />
       </main>
     </div>
   );
